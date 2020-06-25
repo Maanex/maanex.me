@@ -1,7 +1,12 @@
 <template>
   <div class="container">
     <div>
-      Under construction :(
+      Hi I'm Maanex<br>
+      and this website is still under construction :/<br>
+      <br>
+      <a href="https://twitter.com/Maanex_">Twitter @Maanex_</a>
+      <a href="https://github.com/Maanex">Github @Maanex</a>
+      <a href="https://discord.tude.ga/">Discord</a>
     </div>
   </div>
 </template>
