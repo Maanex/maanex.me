@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div>
-      Under construction
+      Under construction :(
     </div>
   </div>
 </template>
