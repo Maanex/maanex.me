@@ -1,55 +1,68 @@
 <template>
-  <div>
+  <div id="app" @click.right.prevent="rightclick">
+    <canvas id="confetti-canvas" />
     <nuxt />
   </div>
 </template>
 
-<style>
-html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-}
+<script lang="ts">
+import Vue from 'vue'
+import confetti from 'canvas-confetti'
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
+export default Vue.extend({
+  data () {
+    return {
+      confettiLib: (..._: any) => {}
+    }
+  },
+  mounted () {
+    const c = document.getElementById('confetti-canvas')
+    if (!c) {
+      return
+    }
+
+    this.confettiLib = confetti.create(c as HTMLCanvasElement, {
+      resize: true,
+      useWorker: true
+    })
+  },
+  methods: {
+    rightclick (e: MouseEvent) {
+      this.confettiLib({
+        particleCount: 40,
+        spread: 50,
+        startVelocity: 30,
+        origin: {
+          x: e.clientX / screen.width,
+          y: e.clientY / screen.height
+        }
+      })
+    }
+  }
+})
+</script>
+
+<style scoped lang="scss">
+@mixin fullscreen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
   margin: 0;
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
+#app {
+  @include fullscreen;
+  background-color: #1a1f25;
+  user-select: none;
 }
 
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+canvas {
+  @include fullscreen;
+  user-select: none;
+  pointer-events: none;
+  z-index: 100;
 }
 </style>

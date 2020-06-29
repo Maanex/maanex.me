@@ -21,12 +21,13 @@ export default {
     '@nuxt/typescript-build'
   ],
   modules: [
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/svg-sprite'
   ],
   axios: {
   },
   build: {
-    extend (config, ctx) {
+    extend (_config, _ctx) {
     }
   }
 }
