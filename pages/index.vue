@@ -2,18 +2,18 @@
   <div class="container">
     <div class="content">
       <div class="left sl">
-        <!-- <nuxt-link to="about" class="c-click">
+        <nuxt-link to="about" class="c-click">
           ABOUT
-        </nuxt-link> -->
+        </nuxt-link>
       </div>
       <div class="center">
         <logo id="logo" />
         <social id="social" />
       </div>
       <div class="right sl">
-        <!-- <nuxt-link to="projects" class="c-click">
+        <nuxt-link to="projects" class="c-click">
           PROJECTS
-        </nuxt-link> -->
+        </nuxt-link>
       </div>
     </div>
   </div>

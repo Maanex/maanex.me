@@ -3,8 +3,9 @@
     <a
       v-for="(l,i) in links"
       :key="i"
+      v-tippy="{ placement: 'bottom', delay: [ 300, 0 ] }"
+      :content="`${l.title}<br><span style=&quot;opacity: .5&quot;>${l.uname}</span>`"
       :href="l.href"
-      :title="l.title"
       target="_blank"
       :ready="anim > i"
       class="c-click-ext"
@@ -41,8 +42,8 @@ export default Vue.extend({
         },
         {
           icon: 'medium',
-          title: 'Blog',
-          uname: 'On Medium',
+          title: 'Medium - Blog',
+          uname: '@maanex',
           href: 'https://medium.com/@maanex'
         },
         {

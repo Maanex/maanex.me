@@ -9,6 +9,15 @@
 import Vue from 'vue'
 import confetti from 'canvas-confetti'
 
+Vue.use(require('vue-tippy').default, {
+  arrow: true,
+  arrowType: 'round',
+  animation: 'vertical',
+  duration: 100,
+  theme: 'black'
+})
+Vue.component('tippy', require('vue-tippy').TippyComponent)
+
 export default Vue.extend({
   data () {
     return {
@@ -33,8 +42,8 @@ export default Vue.extend({
         spread: 50,
         startVelocity: 30,
         origin: {
-          x: e.clientX / screen.width,
-          y: e.clientY / screen.height
+          x: e.clientX / window.innerWidth,
+          y: e.clientY / window.innerHeight
         }
       })
     }
@@ -64,5 +73,30 @@ canvas {
   user-select: none;
   pointer-events: none;
   z-index: 100;
+}
+</style>
+
+<style lang="scss">
+@import '~/assets/style/all.scss';
+
+.tippy-tooltip {
+  background-color: black !important;
+  color: $color-regular;
+  font-family: $font-major;
+  font-size: 11pt;
+  padding: 6pt 10pt;
+}
+
+.tippy-tooltip .tippy-roundarrow {
+  fill: black;
+}
+
+.tippy-tooltip.invisible-theme {
+  opacity: 0;
+}
+
+.tippy-tooltip[data-animation='vertical'][data-state='hidden'] {
+  opacity: 0;
+  transform: translateY(5px) scaleY(.95);
 }
 </style>
