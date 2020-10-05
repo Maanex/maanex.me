@@ -1,0 +1,10 @@
+# robots.txt
+
+User-agent: *
+Disallow: /imprint
+Disallow: /imprint/
+Disallow: /impressum
+Disallow: /impressum/
+
+User-agent: nsa
+Disallow: /

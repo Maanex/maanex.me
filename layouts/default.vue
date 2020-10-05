@@ -1,6 +1,6 @@
 <template>
   <div id="app" @click.right.prevent="rightclick">
-    <canvas id="confetti-canvas" />
+    <canvas v-if="$nuxt.$route.name == 'index'" id="confetti-canvas" />
     <nuxt />
   </div>
 </template>
@@ -65,7 +65,7 @@ export default Vue.extend({
 #app {
   @include fullscreen;
   background-color: #1a1f25;
-  user-select: none;
+  overflow-x: hidden;
 }
 
 canvas {

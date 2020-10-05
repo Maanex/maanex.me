@@ -44,6 +44,7 @@ export default Vue.extend({
   overflow: hidden;
   justify-content: center;
   align-items: center;
+  user-select: none;
   cursor: url('/assets/cursor/default.svg') 5 5, auto;
 }
 
