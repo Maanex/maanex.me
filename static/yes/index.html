@@ -1,0 +1,174 @@
+<!Doctype HTML>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Maanex">
+    <meta name="keywords" content="maanex, maanex_, maanex.tk, mnx, tude, tude.ga">
+    <meta name="theme-color" content="#2e3060" id="metacolor" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Yes - maanex.tk" />
+    <meta name="twitter:description" content="A surreal experience." />
+    <meta name="twitter:site" content="@Maanex_" />
+
+    <title>Yes</title>
+    <link rel="icon" href="../favicon.png">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://tude.ga/">
+    <meta property="og:title" content="Tude">
+    <meta property="og:description" content="Tude">
+    <meta property="og:image" content="https://cdn.discordapp.com/icons/268377578375610368/7395d3f3e0eb780d28d09d44d9483841.png">
+    <meta property="og:site_name" content="Tude">
+    <meta property="og:locale" content="de-DE">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Barriecito|Bungee+Shade|Concert+One|Italianno|Megrim|Monoton|Press+Start+2P|Rye|Saira+Stencil+One|Vast+Shadow&display=swap" rel="stylesheet">
+    <link href="./style.css" rel="stylesheet">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112300017-3"></script>
+    <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-112300017-3'); </script>
+</head>
+
+<body>
+    <div id="app">
+        <div id="dialogue"></div>
+
+        <location :game="game" name="bed" background="black">
+            <a href="#" @click="goto('home')" class="mid styleA">Wakeup</a>
+        </location>
+
+        <location :game="game" name="home" background="universe1.png" script="
+            dialogue(`
+                p 20vw 70vh
+                w 1
+                s styleB
+                t ah yes, what a wonderful daye
+                a intro1
+                w 3
+                c
+                w 1
+                t where'st do i akselerate towards thisday
+                a intro2
+                w 4
+                c
+                w 2
+                t hmmmmmmm
+                a intro3
+                w 3
+                c
+                a ./sfx/smallwush.mp3
+                + signpost present
+            `);
+        ">
+            <img src="./assets/objects/bed.png" style="left: -30vh; bottom: -10vh; width: 80vh"/>
+            <mememan></mememan>
+            <div id="signpost" :style="hoveranim(12412)">
+                <img src="./assets/objects/signpost.png"/>
+                <img src="./assets/objects/signpostA.png" @click="dialogue(`
+                    t pathwae it is
+                    a introA
+                    w 2
+                    c
+                    + mememan outright
+                    w 1
+                    g pathway
+                    `)"/>
+                <img src="./assets/objects/signpostB.png" @click="dialogue(`
+                    t [approach]
+                    a introB
+                    w 1
+                    c
+                    + mememan outup
+                    w 1
+                    g void
+                    `)"/>
+                <img src="./assets/objects/signpostC.png" @click="dialogue(`
+                    t fiNE.
+                    a introC
+                    w 1
+                    c
+                    + mememan outdown
+                    w 1
+                    g abyss
+                    `)"/>
+            </div>
+        </location>
+
+        <location :game="game" name="pathway" background="pathway.jpg" script="
+            dialogue(`
+                p 20vw 70vh
+                s styleB
+                w 1
+                t pleasing...
+                a pathway1
+                w 2
+                c
+                w 2
+                - mister outright
+                w 1
+                t oh.
+                a pathway2
+                w 1
+                c
+                t greetings mister mister,,,
+                a pathway3
+                w 3
+                c
+                p !20vw 70vh
+                s styleC
+                w 1
+                t y.eS ~yeS }
+                a pathway4
+                w 2
+                t gr3Et:ngz fl00tin' fazé
+                w 3
+                c
+                t ?dId ü hápppen to c my frîDè?
+                a pathway5
+                w 4
+                c
+                p 20vw 70vh
+                s styleB
+                w 1
+                t no.
+                a pathway6
+                w 1
+                c
+                p !20vw 70vh
+                s styleC
+                w 1
+                t ók -
+                a pathway7
+                w 1
+                c
+                t take this.
+                a pathway8
+                w 1
+                c
+                t IF ( you stumblpon my fr!Dge ){\nuse [] to contact m3. }\nthankz ü.
+                `)"> TODO hier jetzt den kaktus übergeben
+            <mememan></mememan>
+            <mister class="outright"></mister>
+        </location>
+    </div>
+
+    <template id="t-location">
+        <div class="location" :id="'loc-'+name" :script="script" v-if="game.location == name" :style="background?(background.includes('.')?`background-image:url('./assets/backgrounds/${background}');`:`background-color:${background}`):''">
+            <slot></slot>
+        </div>
+    </template>
+
+    <template id="t-mememan">
+        <img id="mememan" src="./assets/characters/mememan.webp" :style="this.$parent.$parent.hoveranim(0)"/>
+    </template>
+
+    <template id="t-mister">
+        <img id="mister" src="./assets/characters/mister.png" :style="this.$parent.$parent.hoveranim(1244123)"/>
+    </template>
+
+    <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!Doctype HTML>
+
+<html>
+<head>
+    <title>Yikes</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <img src="menacin.png" draggable="false">
+    <img id="yeet" src="gnome.webp" draggable="false">
+    <h1>Ctrl + P</h1>
+    <h2>u2</h2>
+</body>
+
+<style>
+body { 
+    height: 100%;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    z-index: 0;
+    overflow: hidden;
+    background-color: #181818;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+img {
+    width: 40%;
+    border-radius: 5px;
+    transform-style: preserve-3d;
+}
+h1, h2 {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 22px;
+    color: #444444;
+    position: absolute;
+    bottom: 1vh;
+    user-select: none;
+}
+h2 { display: none; }
+#yeet { display: none; }
+@media print {
+    img:not(#yeet) { display: none; }
+    #yeet { display: unset; }
+    h1 { display: none; }
+    h2 { display: unset; }
+}
+</style>
+<script>
+let card = document.getElementsByTagName('img')[0];
+document.addEventListener('mousemove', function(e) {
+  let xAxis = (window.innerWidth / 2 - e.pageX) / 100;
+  let yAxis = -(window.innerHeight / 2 - e.pageY) / 50;
+  card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+});
+</script>
+</html>

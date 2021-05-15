@@ -1,0 +1,122 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+html,
+body,
+#app,
+.location {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #eee;
+    background-position: 50% 50%;
+    background-size: cover;
+}
+
+#app { background-image: url('./assets/backgrounds/universe1.png'); }
+
+img { position: absolute; }
+
+
+#dialogue {
+    position: absolute;
+    z-index: 100;
+}
+
+.mid {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.styleA {
+    font-size: 5vh;
+    font-family: 'Press Start 2P', cursive;
+    background-image: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 2px #AB2158;
+    text-decoration: none;
+    transition: .2s ease all;
+}
+a.styleA:hover {
+    filter: drop-shadow(0 0 20px #ffffff99);
+}
+
+.styleB {
+    font-size: 5vh;
+    font-family: 'Barriecito', cursive;
+    color: #888;
+    -webkit-text-stroke: 1px #85fd7a;
+    text-decoration: none;
+    transition: .2s ease all;
+}
+
+.styleC {
+    font-size: 7vh;
+    font-family: 'Megrim', cursive;
+    color: #1596ff;
+    text-decoration: none;
+    text-shadow: 2px 1px 5px #fff;
+    transition: .2s ease all;
+}
+
+
+
+
+#mememan {
+    position: absolute;
+    width: 40vh;
+    height: 40vh;
+    top: 45vh;
+    left: 10vh;
+    transition: left 1s ease, top 1s ease;
+}
+#mememan.outup { top: -45vh; }
+#mememan.outdown { top: 105vh; }
+#mememan.outleft { left: -45vh; }
+#mememan.outright { left: 105vw; }
+
+#mister {
+    position: absolute;
+    width: 50vh;
+    height: 50vh;
+    top: 35vh;
+    right: 10vh;
+    transition: right 1s ease, top 1s ease;
+}
+#mister.outup { top: -65vh; }
+#mister.outdown { top: 105vh; }
+#mister.outleft { right: 165vh; }
+#mister.outright { right: -65vw; }
+
+#signpost {
+    position: absolute;
+    width: 60vh;
+    height: 60vh;
+    top: 25vh;
+    right: -65vh;
+    transition: 1s ease right;
+}
+
+#signpost.present {
+    right: 10vh;
+}
+
+#signpost > img {
+    position: absolute;
+    width: 100%;
+    cursor: pointer;
+}
+#signpost > img:nth-child(1) { top: 0; }
+#signpost > img:nth-child(2) { top: 22%; }
+#signpost > img:nth-child(3) { top: 44%; }
+#signpost > img:not(:first-child):hover { filter: drop-shadow(0 0 20px #ffffff99); }

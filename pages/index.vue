@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <div id="overlay" />
     <div class="content">
       <div class="left sl">
         <nuxt-link to="about" class="c-click">
@@ -71,10 +72,10 @@ export default Vue.extend({
 a {
   display: inline-block;
   text-decoration: none;
-  font-family: $font-major;
+  font-family: $font-fancy;
   color: $color-minor;
   transition: color .3s ease-out;
-  font-size: 13pt;
+  font-size: 15pt;
   padding: 20px;
 
   .left & { transform: rotate(-90deg); }
@@ -89,6 +90,22 @@ a {
 @keyframes sl-in {
   0% { opacity: 0; }
   100% { opacity: 1; }
+}
+
+#overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  z-index: 999;
+  background-image: url('/assets/img/noise.png');
+  background-position: 50% 50%;
+  mix-blend-mode: difference;
+  opacity: .4;
 }
 
 </style>

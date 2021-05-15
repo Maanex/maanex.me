@@ -1,0 +1,60 @@
+<!Doctype HTML>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Maanex">
+    <meta name="keywords" content="maanex, maanex_, maanex.tk, mnx, tude, tude.ga">
+    <meta name="theme-color" content="#2e3060" id="metacolor" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Maanex" />
+    <meta name="twitter:description" content="hi!" />
+    <meta name="twitter:site" content="@Maanex_" />
+
+    <title>Wubb!</title>
+    <link rel="icon" href="../favicon.png">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://tude.ga/">
+    <meta property="og:title" content="Tude">
+    <meta property="og:description" content="Tude">
+    <meta property="og:image" content="https://cdn.discordapp.com/icons/268377578375610368/7395d3f3e0eb780d28d09d44d9483841.png">
+    <meta property="og:site_name" content="Tude">
+    <meta property="og:locale" content="de-DE">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700&display=swap" rel="stylesheet">
+    <link href="./style.css" rel="stylesheet">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112300017-3"></script>
+    <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-112300017-3'); </script>
+</head>
+
+<body>
+    <div id="app">
+        <h1 v-html="pages[page].title"></h1>
+
+        <div id="content">
+            <h2 v-html="pages[page].question"></h2>
+            <a v-if="!pages[page].custom" v-for="(o, i) of pages[page].options" :class="{ option: true, selected: picked == i }" @click="picked = i" v-html="o[0]"></a>
+            <div v-if="!pages[page].custom" id="buttons">
+                <button class="proceed" :class="{nothere:pages[page].perso}" @click="back()" :disabled="!last.length">Back</button>
+                <button v-if="pages[page].options.length" class="proceed" @click="next()" :disabled="picked == -1">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <template id="t-evaluation">
+        <div class="eval-box">
+            <p class="p1" v-html="name"></p>
+            <div class="eval-score" :style="`background-color: ${color}; width: ${value/max*100}%`">
+                <p class="p2" v-html="name"></p>
+            </div>
+        </div>
+    </template>
+
+    <script src="./script.js"></script>
+</body>
+</html>
