@@ -25,7 +25,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Barriecito|Bungee+Shade|Concert+One|Italianno|Megrim|Monoton|Press+Start+2P|Rye|Saira+Stencil+One|Vast+Shadow&display=swap" rel="stylesheet">
-    <link href="./style.css" rel="stylesheet">
+    <link href="./yes/style.css" rel="stylesheet">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112300017-3"></script>
@@ -40,7 +40,7 @@
             <a href="#" @click="goto('home')" class="mid styleA">Wakeup</a>
         </location>
 
-        <location :game="game" name="home" background="universe1.png" script="
+        <location :game="game" name="home" background="./yes/assets/universe1.png" script="
             dialogue(`
                 p 20vw 70vh
                 w 1
@@ -63,11 +63,11 @@
                 + signpost present
             `);
         ">
-            <img src="./assets/objects/bed.png" style="left: -30vh; bottom: -10vh; width: 80vh"/>
+            <img src="./yes/assets/objects/bed.png" style="left: -30vh; bottom: -10vh; width: 80vh"/>
             <mememan></mememan>
             <div id="signpost" :style="hoveranim(12412)">
-                <img src="./assets/objects/signpost.png"/>
-                <img src="./assets/objects/signpostA.png" @click="dialogue(`
+                <img src="./yes/assets/objects/signpost.png"/>
+                <img src="./yes/assets/objects/signpostA.png" @click="dialogue(`
                     t pathwae it is
                     a introA
                     w 2
@@ -76,7 +76,7 @@
                     w 1
                     g pathway
                     `)"/>
-                <img src="./assets/objects/signpostB.png" @click="dialogue(`
+                <img src="./yes/assets/objects/signpostB.png" @click="dialogue(`
                     t [approach]
                     a introB
                     w 1
@@ -85,7 +85,7 @@
                     w 1
                     g void
                     `)"/>
-                <img src="./assets/objects/signpostC.png" @click="dialogue(`
+                <img src="./yes/assets/objects/signpostC.png" @click="dialogue(`
                     t fiNE.
                     a introC
                     w 1
@@ -162,13 +162,13 @@
     </template>
 
     <template id="t-mememan">
-        <img id="mememan" src="./assets/characters/mememan.webp" :style="this.$parent.$parent.hoveranim(0)"/>
+        <img id="mememan" src="./yes/assets/characters/mememan.webp" :style="this.$parent.$parent.hoveranim(0)"/>
     </template>
 
     <template id="t-mister">
-        <img id="mister" src="./assets/characters/mister.png" :style="this.$parent.$parent.hoveranim(1244123)"/>
+        <img id="mister" src="./yes/assets/characters/mister.png" :style="this.$parent.$parent.hoveranim(1244123)"/>
     </template>
 
-    <script src="./script.js"></script>
+    <script src="./yes/script.js"></script>
 </body>
 </html>
