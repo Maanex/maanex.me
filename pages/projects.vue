@@ -42,7 +42,17 @@ export default Vue.extend({
         {
           href: 'https://bkwiki.rexcellentgames.com',
           name: 'Burning Knight Wiki',
-          description: 'one-day project to build a minimalist music player'
+          description: 'official item wiki for the computer game "burning knight"'
+        },
+        {
+          href: 'https://pass.maanex.me/',
+          name: 'pass.maanex.me',
+          description: 'innovative password manager, using procedural generation over encrypted saving'
+        },
+        {
+          href: 'https://week.maanex.me/',
+          name: 'week.maanex.me',
+          description: 'simplistic week planner to not lose track over repeating tasks'
         },
         {
           href: 'https://loqui.app/',

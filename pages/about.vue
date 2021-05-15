@@ -4,7 +4,7 @@
     <span>I'm currently studying computer science at FAU, Germany and do full stack web development along the way</span>
     <span>Feel free to <nuxt-link to="/" class="link">get in touch</nuxt-link> or view my projects at <nuxt-link to="/projects" class="link">maanex.me/projects</nuxt-link></span>
     <br><br>
-    <span>Buzzwords in random order:</span>
+    <span>Some buzzwords in random order:</span>
     <span v-text="buzzwords" />
     <br><br>
     <nuxt-link to="/" class="link">
