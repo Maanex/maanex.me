@@ -5,10 +5,10 @@
   >
     <filter id="pixelate" x="0" y="0">
       <feFlood x="0" y="0" height="1" width="1" />
-      <feComposite :width="pixelation" :height="pixelation" />
+      <feComposite :width="pixelationDisplay" :height="pixelationDisplay" />
       <feTile result="a" />
       <feComposite in="SourceGraphic" in2="a" operator="in" />
-      <feMorphology operator="dilate" :radius="pixelation-1" />
+      <feMorphology operator="dilate" :radius="pixelationDisplay-1" />
     </filter>
     <g id="pixelater" filter="url(#pixelate)">
       <path
@@ -47,7 +47,8 @@ export default Vue.extend({
     return {
       offset: 0,
       fadeout: 0,
-      pixelation: 9,
+      pixelation: 4,
+      pixelationDisplay: 4,
       colors: [
         ['#631953', 0],
         ['#97003E', 0.1],
@@ -86,6 +87,8 @@ export default Vue.extend({
           this.offset += 0.001
           this.offset *= 1.01
         }
+
+        this.pixelationDisplay = this.pixelation * 10 % 4 === 1 ? 1 : this.pixelation
       })
     },
     mix (n1: number, n2: number, ratio: number): number {
