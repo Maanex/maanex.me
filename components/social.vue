@@ -37,19 +37,13 @@ export default Vue.extend({
         {
           icon: 'discord',
           title: 'Discord',
-          uname: 'Tude Club',
+          uname: '-',
           href: 'https://discord.gg/mJnQXet'
-        },
-        {
-          icon: 'medium',
-          title: 'Medium - Blog',
-          uname: '@maanex',
-          href: 'https://medium.com/@maanex'
         },
         {
           icon: 'mail',
           title: 'Mail',
-          uname: 'maanex.tude@gmail.com',
+          uname: '-',
           href: 'mailto:maanex.tude@gmail.com'
         }
       ],

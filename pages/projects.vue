@@ -55,6 +55,11 @@ export default Vue.extend({
           description: 'simplistic week planner to not lose track over repeating tasks'
         },
         {
+          href: 'https://play.google.com/store/apps/details?id=de.tude.lines',
+          name: 'linjo',
+          description: 'an easy to learn, hard to master arcade mobile game'
+        },
+        {
           href: 'https://loqui.app/',
           name: 'Loqui',
           description: 'translation website, coming soon'
