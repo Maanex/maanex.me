@@ -34,8 +34,6 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="scss">
-@import '~/assets/style/all.scss';
-
 .container {
   display: flex;
   width: 100vw;

@@ -10,15 +10,19 @@
       :ready="anim > i"
       class="c-click-ext"
     >
-      <svg-icon :name="l.icon" />
+      <icon :name="l.icon" />
     </a>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import icon from './icon.vue'
 
 export default Vue.extend({
+  components: {
+    icon
+  },
   data () {
     return {
       links: [
@@ -37,14 +41,14 @@ export default Vue.extend({
         {
           icon: 'discord',
           title: 'Discord',
-          uname: '-',
+          uname: '"Tude Club"',
           href: 'https://discord.gg/mJnQXet'
         },
         {
           icon: 'mail',
           title: 'Mail',
-          uname: '-',
-          href: 'mailto:maanex.tude@gmail.com'
+          uname: 'andreas@maanex.me',
+          href: 'mailto:andreas@maanex.me'
         }
       ],
       anim: 0
@@ -69,11 +73,9 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="scss">
-@import '~/assets/style/all.scss';
-
 div {
   display: inline-flex;
-  justify-content: center;
+  justify-content: space-around;
   width: 100%;
 }
 
@@ -100,9 +102,9 @@ a {
     color: $primary-five;
   }
 
-  svg {
-    height: 100%;
-    width: 100%;
+  .icon {
+    height: 23pt;
+    width: 23pt;
   }
 }
 

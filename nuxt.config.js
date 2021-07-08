@@ -18,16 +18,22 @@ export default {
   plugins: [
   ],
   buildModules: [
-    '@nuxt/typescript-build'
+    '@nuxt/typescript-build',
+    '@nuxtjs/svg',
+    '@nuxtjs/style-resources'
   ],
   modules: [
-    '@nuxtjs/axios',
-    '@nuxtjs/svg-sprite'
+    '@nuxtjs/axios'
   ],
   axios: {
   },
   build: {
     extend (_config, _ctx) {
     }
+  },
+  styleResources: {
+    scss: [
+      '@/assets/style/all.scss'
+    ]
   }
 }

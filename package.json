@@ -13,7 +13,8 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
-    "@nuxtjs/svg-sprite": "^0.4.11",
+    "@nuxtjs/style-resources": "^1.2.0",
+    "@nuxtjs/svg": "^0.1.12",
     "@types/canvas-confetti": "^1.0.0",
     "canvas-confetti": "^1.2.0",
     "node-sass": "^4.14.1",
