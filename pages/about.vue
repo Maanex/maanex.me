@@ -7,7 +7,7 @@
     <span>Some buzzwords in random order:</span>
     <span v-text="buzzwords" />
     <br><br>
-    <nuxt-link to="/" class="link">
+    <nuxt-link to="/" class="link c-click">
       Back
     </nuxt-link>
   </div>

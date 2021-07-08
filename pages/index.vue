@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <div id="overlay" />
     <div class="content">
       <div class="left sl">
         <nuxt-link to="about" class="c-click">
@@ -44,7 +43,6 @@ export default Vue.extend({
   justify-content: center;
   align-items: center;
   user-select: none;
-  cursor: url('/assets/cursor/default.svg') 5 5, auto;
 }
 
 .center {
@@ -88,22 +86,6 @@ a {
 @keyframes sl-in {
   0% { opacity: 0; }
   100% { opacity: 1; }
-}
-
-#overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-  pointer-events: none;
-  z-index: 999;
-  background-image: url('/assets/img/noise.png');
-  background-position: 50% 50%;
-  mix-blend-mode: difference;
-  opacity: .4;
 }
 
 </style>
