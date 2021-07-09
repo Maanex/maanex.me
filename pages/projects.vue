@@ -61,7 +61,7 @@ export default Vue.extend({
           colors: ['#ffffff', '#A9F8D2'],
           layout: 'compact',
           slot: 'sachen',
-          tags: ['React', 'Elexir']
+          tags: ['React', 'Elixir']
         },
         {
           href: 'https://play.google.com/store/apps/details?id=de.tude.lines',
@@ -85,7 +85,7 @@ export default Vue.extend({
         {
           href: 'https://pass.maanex.me/',
           name: 'pass.maanex.me',
-          desc: 'Innovative password manager, using procedural generation over encrypted saving',
+          desc: 'A password manager, using procedural generation over encrypted saving',
           img: 'logo_mpass.png',
           colors: ['#34d399', '#A7F3D0'],
           layout: 'compact',
@@ -95,7 +95,7 @@ export default Vue.extend({
         {
           href: 'https://week.maanex.me/',
           name: 'week.maanex.me',
-          desc: 'Simplistic week planner to not lose track over repeating tasks',
+          desc: 'A simplistic week planner to not lose track over repeating tasks',
           img: 'logo_mweek.png',
           colors: ['#fcd34d', '#FEF3C7'],
           layout: 'compact',
